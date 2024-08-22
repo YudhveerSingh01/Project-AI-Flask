@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement - CodroidHub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f9ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.3);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 30px;
+            color: #007BFF;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #00C6FF;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .accordion {
+            cursor: pointer;
+            background-color: #e7f0ff;
+            color: #444;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .active, .accordion:hover {
+            background-color: #d0e7ff;
+        }
+        .panel {
+            padding: 20px;
+            display: none;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 2px 15px rgba(0, 123, 255, 0.1);
+        }
+        .panel p {
+            font-size: 18px;
+            color: #555;
+        }
+        .solution-section {
+            margin-bottom: 40px;
+        }
+        .solution-item {
+            margin-bottom: 20px;
+        }
+        .solution-item h3 {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .solution-item a {
+            color: #00C6FF;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .solution-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Problem Statement</h1>
+    </div>
+
+    <div class="container">
+        <!-- Problem Statement Section -->
+        <div class="section">
+            <h2>Disease Detection</h2>
+            <p>
+                Automated Detection of Crop Diseases Using Deep Learning and Computer Vision Techniques.
+            </p>
+        </div>
+
+        <!-- Problem Details Section -->
+        <div class="section">
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Develop a machine learning model that can detect and classify plant diseases using image data. The model should analyze images of leaves, fruits, or other parts of the plant to identify symptoms of various diseases. The objective is to enable early detection and prompt treatment, thereby reducing crop loss and ensuring healthier yields.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>This problem is prevalent in agricultural areas worldwide where crops are susceptible to diseases. Regions with large-scale farming, such as India, Brazil, China, and the United States, will benefit significantly from this solution. The data for this model will be collected from farms, research centers, and agricultural databases, covering various crops and disease types.</p>
+            </div>
+
+            <button class="accordion">Who</button>
+            <div class="panel">
+                <p>Disease detection is valuable for farmers by enabling early identification and treatment of plant diseases, reducing crop loss and improving yield. Agricultural businesses benefit from stable supply and quality of produce, while government agencies and researchers use data to develop better disease management strategies and policies.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Early detection of plant diseases is vital for preventing significant crop losses, which can have devastating economic and food security implications. By identifying diseases early, farmers can apply targeted treatments, reduce the use of pesticides, and avoid the widespread destruction of crops. Implementing this solution can lead to healthier crops, higher yields, and more sustainable farming practices, contributing to global food security and environmental protection.</p>
+            </div>
+        </div>
+
+        <!-- Solution Sections -->
+        <div class="solution-section">
+            <h2>Solution</h2>
+            <div class="solution-item">
+                <h3>Code Approach</h3>
+                <p>
+                    <a href="#">Detailed explanation of the coding approach</a> used to solve the problem. Include links to code snippets, tutorials, or relevant resources.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>No-Code Approach</h3>
+                <p>
+                    <a href="#">Explore the no-code tools and techniques</a> that can be utilized to address the problem without writing code.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Blogs</h3>
+                <p>
+                    <a href="#">Read related blogs</a> that discuss the problem in detail, offering insights, case studies, or alternative perspectives.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Github Link</h3>
+                <p>
+                    <a href="https://github.com/YudhveerSingh01">View the project on Github</a> to see the codebase, contribute, or explore the documentation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

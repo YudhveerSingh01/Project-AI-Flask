@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Prediction - CodroidHub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f9ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.3);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 30px;
+            color: #007BFF;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #00C6FF;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .accordion {
+            cursor: pointer;
+            background-color: #e7f0ff;
+            color: #444;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .active, .accordion:hover {
+            background-color: #d0e7ff;
+        }
+        .panel {
+            padding: 20px;
+            display: none;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 2px 15px rgba(0, 123, 255, 0.1);
+        }
+        .panel p {
+            font-size: 18px;
+            color: #555;
+        }
+        .solution-section {
+            margin-bottom: 40px;
+        }
+        .solution-item {
+            margin-bottom: 20px;
+        }
+        .solution-item h3 {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .solution-item a {
+            color: #00C6FF;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .solution-item a:hover {
+            text-decoration: underline;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Problem Statement</h1>
+    </div>
+
+    <div class="container">
+        <!-- Problem Statement Section -->
+        <div class="section">
+            <h2>Yield Prediction</h2>
+            <p>
+                Predicting Crop Yield and Identifying Influential Factors Using Statistical Models and Environmental Data.
+            </p>
+        </div>
+
+        <div class="image-container">
+            <img id="dimg_305" src="data:image/jpeg;base64,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" class="YQ4gaf" height="206" style="object-position:0% 44%" width="245" alt="Crop Monitoring - The Future of Farming" data-csiid="EsbGZrvvGuSVseMP3tWvoQQ_13" data-atf="1">
+        </div>
+
+        <!-- Yield Prediction Section -->
+        <div class="section">
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Develop a machine learning model that predicts crop yield by analyzing historical data, weather patterns, soil conditions, and agricultural practices. The model should consider factors such as temperature, precipitation, soil moisture, and crop type to generate accurate yield forecasts. The goal is to provide farmers with actionable insights to optimize their resource allocation, improve crop management, and increase overall productivity.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>This problem primarily affects agricultural regions where farming is a significant economic activity. It is particularly relevant in areas with diverse climatic conditions, such as India, the United States, and other countries with large agricultural sectors. Data will be collected from various sources, including farms, weather stations, and satellite imagery, to ensure a comprehensive analysis that can be applied to different geographical locations.</p>
+            </div>
+
+            <button class="accordion">Who</button>
+            <div class="panel">
+                <p>Yield prediction benefits farmers by optimizing resource use and improving crop planning, enhancing productivity and reducing costs. It aids agricultural businesses in supply chain management and market pricing. Government agencies use it for policy-making and ensuring food security, while researchers gain valuable data for improving agricultural practices.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Yield prediction is crucial for ensuring food security and optimizing agricultural productivity. Accurate predictions help farmers make informed decisions about planting, irrigation, fertilization, and harvesting, reducing the risk of crop failure and increasing profitability. Additionally, it aids in national and global planning, allowing governments and organizations to anticipate food supply levels, manage storage, and plan for exports and imports. Failure to address this problem could lead to food shortages, economic losses, and increased vulnerability to climate change.</p>
+            </div>
+        </div>
+
+        <!-- Solution Sections -->
+        <div class="solution-section">
+            <h2>Solution</h2>
+            <div class="solution-item">
+                <h3>Code Approach</h3>
+                <p>
+                    <a href="#">Detailed explanation of the coding approach</a> used to solve the problem. Include links to code snippets, tutorials, or relevant resources.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>No-Code Approach</h3>
+                <p>
+                    <a href="#">Explore the no-code tools and techniques</a> that can be utilized to address the problem without writing code.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Blogs</h3>
+                <p>
+                    <a href="#">Read related blogs</a> that discuss the problem in detail, offering insights, case studies, or alternative perspectives.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Github Link</h3>
+                <p>
+                    <a href="https://github.com/YudhveerSingh01">View the project on Github</a> to see the codebase, contribute, or explore the documentation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

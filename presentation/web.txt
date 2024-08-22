@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 4W Canvas - CodroidHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 28px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+        .accordion {
+            cursor: pointer;
+            background-color: #f4f4f4;
+            color: #444;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .active, .accordion:hover {
+            background-color: #ddd;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .panel p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Interactive 4W Canvas</h1>
+    </div>
+
+    <div class="container">
+        <!-- Yield Prediction Section -->
+        <div class="section">
+            <h2>Yield Prediction</h2>
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Develop a model to forecast crop yield based on historical data and current environmental conditions. Identify key factors impacting yield.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>Agricultural fields in various regions; data collected from farms and weather stations.</p>
+            </div>
+
+            <button class="accordion">When</button>
+            <div class="panel">
+                <p>Throughout the growing season; forecasts made before planting and during the growing season.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Accurate yield prediction aids in resource allocation, planning, and risk management, enhancing food security and reducing wastage.</p>
+            </div>
+        </div>
+
+        <!-- Disease Detection Section -->
+        <div class="section">
+            <h2>Disease Detection</h2>
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Develop an automated system to identify and classify crop diseases from images using deep learning and computer vision.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>Agricultural fields, greenhouses, and farms.</p>
+            </div>
+
+            <button class="accordion">When</button>
+            <div class="panel">
+                <p>Ongoing process with regular updates and monitoring during the growing season.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Early detection of diseases prevents spread and minimizes crop loss, maintaining healthy crops and improving yield.</p>
+            </div>
+        </div>
+
+        <!-- Health Chatbot Section -->
+        <div class="section">
+            <h2>Health Chatbot</h2>
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Create a chatbot to provide instant guidance and support on crop health issues based on user queries and data analysis.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>Accessible through digital platforms such as websites or mobile apps used by farmers and agricultural advisors.</p>
+            </div>
+
+            <button class="accordion">When</button>
+            <div class="panel">
+                <p>Continuous operation, providing real-time assistance whenever users seek advice or information.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Provides immediate and personalized support for crop management, helping users address issues promptly and effectively.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement - CodroidHub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f9ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.3);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 30px;
+            color: #007BFF;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #00C6FF;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .accordion {
+            cursor: pointer;
+            background-color: #e7f0ff;
+            color: #444;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .active, .accordion:hover {
+            background-color: #d0e7ff;
+        }
+        .panel {
+            padding: 20px;
+            display: none;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 2px 15px rgba(0, 123, 255, 0.1);
+        }
+        .panel p {
+            font-size: 18px;
+            color: #555;
+        }
+        .solution-section {
+            margin-bottom: 40px;
+        }
+        .solution-item {
+            margin-bottom: 20px;
+        }
+        .solution-item h3 {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .solution-item a {
+            color: #00C6FF;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .solution-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Problem Statement</h1>
+    </div>
+
+    <div class="container">
+        <!-- Problem Statement Section -->
+        <div class="section">
+            <h2>Health ChatBot</h2>
+            <p>
+                Developing an Intelligent Chatbot for Real-Time Crop Health Monitoring and Advisory.
+            </p>
+        </div>
+
+        <!-- Chatbot Details Section -->
+        <div class="section">
+            <button class="accordion">What</button>
+            <div class="panel">
+                <p>Develop a chatbot capable of providing preliminary health assessments and advice based on user inputs. The chatbot should be able to recognize symptoms, suggest possible conditions, and recommend whether a user should seek further medical attention. It should be integrated with a database of common diseases, symptoms, and treatments, and be able to interact in a natural, conversational manner.</p>
+            </div>
+
+            <button class="accordion">Where</button>
+            <div class="panel">
+                <p>This chatbot can be deployed on various platforms, such as websites, mobile apps, or messaging services. It can be particularly useful in regions with limited access to healthcare services, including rural areas, developing countries, or during times of high demand, such as during pandemics or in emergency situations.</p>
+            </div>
+
+            <button class="accordion">Who</button>
+            <div class="panel">
+                <p>A health chatbot benefits individuals by providing immediate, preliminary health assessments and advice, especially in areas with limited access to healthcare. It supports healthcare providers by reducing the burden of non-critical cases, and helps in managing healthcare resources more effectively.</p>
+            </div>
+
+            <button class="accordion">Why</button>
+            <div class="panel">
+                <p>Access to timely and accurate health information is crucial for preventing the escalation of minor health issues into more serious conditions. The chatbot can alleviate the burden on healthcare systems by filtering non-critical cases, providing users with peace of mind, and guiding them to appropriate care. This helps to ensure that healthcare resources are allocated efficiently, improving overall public health outcomes.</p>
+            </div>
+        </div>
+
+        <!-- Solution Sections -->
+        <div class="solution-section">
+            <h2>Solution</h2>
+            <div class="solution-item">
+                <h3>Code Approach</h3>
+                <p>
+                    <a href="#">Detailed explanation of the coding approach</a> used to solve the problem. Include links to code snippets, tutorials, or relevant resources.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>No-Code Approach</h3>
+                <p>
+                    <a href="#">Explore the no-code tools and techniques</a> that can be utilized to address the problem without writing code.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Blogs</h3>
+                <p>
+                    <a href="#">Read related blogs</a> that discuss the problem in detail, offering insights, case studies, or alternative perspectives.
+                </p>
+            </div>
+            <div class="solution-item">
+                <h3>Github Link</h3>
+                <p>
+                    <a href="https://github.com/YudhveerSingh01">View the project on Github</a> to see the codebase, contribute, or explore the documentation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
